@@ -1,6 +1,6 @@
 ﻿# AAPL Stock Price Prediction (Group 13)
 
-> **Note on repository name:** This GitHub repo is still named `Traffic-Accident-Data-Analysis` for historical reasons. The actual project is **AAPL next-day adjusted close prediction** (CSM3601 Group 13). Portfolio: https://hawk327ml.github.io/
+> Repository: `Hawk327ml/AAPL-Stock-Prediction` (renamed from `Traffic-Accident-Data-Analysis`). Portfolio: https://hawk327ml.github.io/
 
 ## Canonical metrics (notebook / model metadata)
 
