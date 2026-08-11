@@ -1,0 +1,5 @@
+Model,Candidates,Best_CV_RMSE,Best_Parameters
+Ridge Regression,5,1.6311914584498113,"{""model__alpha"": 0.01}"
+Linear Regression,1,1.635219357305242,{}
+Random Forest,24,15.691454197791108,"{""model__max_depth"": null, ""model__max_features"": 0.7, ""model__min_samples_leaf"": 4, ""model__n_estimators"": 500}"
+XGBoost,16,15.761933352076335,"{""model__colsample_bytree"": 0.8, ""model__learning_rate"": 0.03, ""model__max_depth"": 2, ""model__n_estimators"": 400, ""model__subsample"": 1.0}"

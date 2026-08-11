@@ -1,0 +1,2 @@
+Best ML Model,Test MAE,Test MSE,Test RMSE,Test R2 Score,Test Directional Accuracy
+Ridge Regression,2.1196,8.2735,2.8764,0.9873,0.49

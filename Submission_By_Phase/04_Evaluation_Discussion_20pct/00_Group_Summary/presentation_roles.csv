@@ -1,0 +1,5 @@
+﻿Member,Presentation Role,Main Files,Key Message
+Member 1,Opening introduction and poster overview,"05_Presentation_Demonstration_20pct/README_PRESENTATION_DEMO.md; poster",Introduce the problem, dataset, workflow, and group presentation route.
+Member 2,Data preparation and EDA code,"02_Data_Preparation_EDA_20pct/AAPL_Data_Preparation.ipynb; 02_Data_Preparation_EDA_20pct/AAPL_Data_Preparation_EDA_Final.ipynb",Explain data cleaning, missing-value checks, outlier handling, visual EDA, feature engineering, and the prepared modeling CSV.
+Member 3,Model development code,"03_Model_Development_30pct/AAPL_Model_Development.ipynb",Explain chronological split, pipelines, cross-validation, hyperparameter tuning, model comparison, and why Ridge Regression was selected.
+Member 4,Evaluation discussion and Q&A,"04_Evaluation_Discussion_20pct/00_Group_Summary/POSTER_TALKING_FLOW.md; 04_Evaluation_Discussion_20pct/00_Group_Summary/TEACHER_QA_PREP.md",Explain final metrics, graphs, feature importance, limitations, ethics, and why the baseline is important.

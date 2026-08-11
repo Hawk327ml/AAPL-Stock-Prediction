@@ -1,0 +1,6 @@
+Model,MAE,MSE,RMSE,R2 Score,Directional Accuracy,Locked Selection
+Persistence Baseline,2.1047,8.183,2.8606,0.9874,0.004,False
+Ridge Regression,2.1196,8.2735,2.8764,0.9873,0.49,True
+Linear Regression,2.1212,8.2926,2.8797,0.9873,0.506,False
+Random Forest,19.4153,687.6152,26.2224,-0.0563,0.4024,False
+XGBoost,19.8951,721.6218,26.863,-0.1085,0.4502,False

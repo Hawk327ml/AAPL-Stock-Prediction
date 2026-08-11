@@ -1,0 +1,58 @@
+{
+  "locked_model_name": "Ridge Regression",
+  "best_parameters": {
+    "model__alpha": 0.01
+  },
+  "feature_columns": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "MA7",
+    "MA30",
+    "Daily_Return",
+    "Log_Return",
+    "Volatility",
+    "Volume_Change",
+    "Log_Volume_Change",
+    "Price_Range",
+    "Open_Close_Change",
+    "Close_Lag1",
+    "Close_Lag5",
+    "Return_Lag1",
+    "Return_Lag5"
+  ],
+  "target_column": "Target_Close_t1",
+  "random_state": 42,
+  "cv": {
+    "type": "TimeSeriesSplit",
+    "n_splits": 5,
+    "gap": 1
+  },
+  "train_period": [
+    "2015-02-13",
+    "2022-12-30"
+  ],
+  "validation_period": [
+    "2023-01-03",
+    "2023-12-29"
+  ],
+  "test_period": [
+    "2024-01-02",
+    "2024-12-30"
+  ],
+  "test_metrics": {
+    "MAE": 2.1196076199427236,
+    "MSE": 8.2734903637416,
+    "RMSE": 2.8763675640887065,
+    "R2": 0.9872910119320845,
+    "Directional_Accuracy": 0.4900398406374502
+  },
+  "versions": {
+    "python": "3.14.3",
+    "pandas": "3.0.2",
+    "scikit_learn": "1.8.0",
+    "xgboost": "3.3.0"
+  }
+}
