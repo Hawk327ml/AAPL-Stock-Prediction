@@ -15,7 +15,7 @@
 ## Live demo & poster (no app source)
 
 - **Live (Streamlit Cloud):** https://aapl-stock-prediction-3scusseltfmnzjcthk2lp8.streamlit.app/
-- **Poster:** `docs/poster/AAPL_Green_ML_Poster.png`
+- **Poster:** `docs/poster/A3_AAPL_Final_Editable_Poster2.pdf`
 
 原 Streamlit 网页源码已不可得，本仓库**不收录、不重建** web 源码；作品集仅保留 Live 链接 + 海报 + Notebook 课设材料。
 
@@ -49,3 +49,4 @@ Start with:
 ## Portfolio
 
 https://hawk327ml.github.io/
+
