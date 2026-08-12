@@ -1,52 +1,79 @@
-﻿# AAPL Stock Price Prediction (Group 13)
+﻿# AAPL Next-Day Adj Close Forecast
 
-> Repository: `Hawk327ml/AAPL-Stock-Prediction` (renamed from `Traffic-Accident-Data-Analysis`). Portfolio: https://hawk327ml.github.io/
+CSM3601 Group 13 · Ridge regression on engineered daily features.
 
-## Canonical metrics (notebook / model metadata)
+**Portfolio:** https://hawk327ml.github.io/  
+**Live demo (Streamlit Cloud):** https://aapl-stock-prediction-3scusseltfmnzjcthk2lp8.streamlit.app/  
+**Poster:** [`docs/poster/A3_AAPL_Final_Editable_Poster2.pdf`](docs/poster/A3_AAPL_Final_Editable_Poster2.pdf)
 
-对外展示与 README **以课设 Notebook 锁定结果为准**：
+> Streamlit **app source is not in this repo** (unavailable). Portfolio keeps Live + poster + reproducible notebooks/artifacts only.
 
-- Model: **Ridge Regression**（先按 2023 validation RMSE 选定，再看 2024 test）
-- 2024 test: MAE **2.1196**, RMSE **2.8764**, R² **0.9873**, directional accuracy **49.00%**
-- Target: `Target_Close_t1`（下一交易日 Adj Close）
+## Result (canonical)
 
-海报（Green ML / Streamlit 包装）上的数字可能不同，**不作对外权威指标**。
+Locked from the modeling notebook / `best_model_metadata.json` after **2023 validation** selection, then **2024 test** evaluation:
 
-## Live demo & poster (no app source)
+| Metric | Value |
+|--------|-------|
+| Model | Ridge (`alpha=0.01`) |
+| Target | `Target_Close_t1` (next trading day Adj Close) |
+| Test MAE | **2.12** |
+| Test RMSE | **2.88** |
+| Test R² | **0.987** |
+| Directional accuracy | **49.0%** |
 
-- **Live (Streamlit Cloud):** https://aapl-stock-prediction-3scusseltfmnzjcthk2lp8.streamlit.app/
-- **Poster:** `docs/poster/A3_AAPL_Final_Editable_Poster2.pdf`
+Poster / Streamlit UI numbers may differ — **notebook metrics are the public source of truth**.
 
-原 Streamlit 网页源码已不可得，本仓库**不收录、不重建** web 源码；作品集仅保留 Live 链接 + 海报 + Notebook 课设材料。
+### Honest read
 
-## What is here
+- Persistence baseline (today’s close → tomorrow) is slightly better on 2024 test RMSE; next-day **price level** is hard to beat.
+- High R² ≠ trading edge: directional accuracy ≈ coin flip.
+- Academic demo only — **not financial advice**.
 
-Canonical course submission under `Submission_By_Phase/`:
+## Key figures
 
-| Phase | Content |
-|-------|---------|
-| `00_Project_Sheet` | Course project sheet |
-| `01_Proposal_10pct` | Proposal PDF/DOCX |
-| `02_Data_Preparation_EDA_20pct` | Cleaning + EDA notebooks + CSVs |
-| `03_Model_Development_30pct` | Model notebook, figures, `models/best_aapl_next_day_model.joblib` |
-| `04_Evaluation_Discussion_20pct` | Metrics, graphs, member write-ups |
-| `05_Presentation_Demonstration_20pct` | Demo speaking guide + key figures |
+![2024 test predictions and residuals](Submission_By_Phase/03_Model_Development_30pct/figures/selected_model_test_predictions_and_residuals.png)
 
-Large archives (`.zip` / `.rar`) and draft backups (`99_Archive_*`) are excluded from GitHub.
+![Validation comparison](Submission_By_Phase/03_Model_Development_30pct/figures/validation_comparison_and_overfitting.png)
 
-## Run notebooks
+![Feature importance](Submission_By_Phase/03_Model_Development_30pct/figures/selected_model_feature_importance.png)
+
+## Quick demo (no Streamlit rebuild)
+
+Replay locked 2024 test predictions from saved artifacts:
+
+```bash
+pip install -r requirements.txt
+python scripts/predict_demo.py
+```
+
+Optional: load the joblib pipeline and re-score the last N test rows (needs compatible `scikit-learn`):
+
+```bash
+python scripts/predict_demo.py --rescore 5
+```
+
+## Repo map
+
+| Path | Content |
+|------|---------|
+| `Submission_By_Phase/02_*` | Cleaning + EDA notebooks + CSVs |
+| `Submission_By_Phase/03_*` | Model notebook, figures, `models/*.joblib`, metrics CSVs |
+| `Submission_By_Phase/04_*` | Evaluation write-ups by member |
+| `Submission_By_Phase/05_*` | Presentation / demo speaking notes |
+| `docs/poster/` | Final A3 poster PDF |
+
+## Reproduce notebooks
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Start with:
-
 1. `Submission_By_Phase/02_Data_Preparation_EDA_20pct/AAPL_Data_Preparation_EDA_Final.ipynb`
 2. `Submission_By_Phase/03_Model_Development_30pct/AAPL_Model_Development.ipynb`
-3. `Submission_By_Phase/05_Presentation_Demonstration_20pct/README_PRESENTATION_DEMO.md`
+3. Discussion: `Submission_By_Phase/03_Model_Development_30pct/results/model_development_discussion.md`
 
-## Portfolio
+Train / validation / test windows (chronological): **2015–2022 / 2023 / 2024**.
 
-https://hawk327ml.github.io/
+## Stack
 
+Python · pandas · scikit-learn · XGBoost (compared, not locked) · matplotlib · joblib · Jupyter
