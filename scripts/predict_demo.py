@@ -23,6 +23,7 @@ DATA_PATH = PHASE3 / "data" / "AAPL_Prepared_for_Modeling.csv"
 def print_locked_summary() -> dict:
     meta = json.loads(METADATA.read_text(encoding="utf-8"))
     m = meta["test_metrics"]
+    print("AAPL Forecast · 次日 Adj Close（Notebook 口径，非交易建议）")
     print("Locked model:", meta["locked_model_name"])
     print("Params:", meta.get("best_parameters"))
     print("Test window:", " → ".join(meta["test_period"]))
